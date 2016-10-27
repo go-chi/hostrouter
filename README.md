@@ -34,7 +34,7 @@ func main() {
 }
 
 // Router for the API service
-func apiRouter() http.Handler {
+func apiRouter() chi.Router {
   r := chi.NewRouter()
   r.Get("/", apiIndexHandler)
   // ...
@@ -42,7 +42,7 @@ func apiRouter() http.Handler {
 }
 
 // Router for the Short URL service
-func shortUrlRouter() http.Handler {
+func shortUrlRouter() chi.Router {
   r := chi.NewRouter()
   r.Get("/", shortIndexHandler)
   // ...

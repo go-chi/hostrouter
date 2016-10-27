@@ -11,7 +11,7 @@ func main() {
   r := chi.NewRouter()
 
   r.Use(middleware.RequestID)
-	r.Use(middleware.RealIP)
+  r.Use(middleware.RealIP)
   r.Use(middleware.Logger)
   r.Use(middleware.Recoverer)
 
@@ -28,7 +28,7 @@ func main() {
   hr.Map("*", everythingElseRouter)
 
   // Mount the host router
-	r.Mount("/", hr)
+  r.Mount("/", hr)
 
   http.ListenAndServe(":3333", r)
 }

@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/pressly/chi"
+	"github.com/go-chi/chi"
 )
 
 type Routes map[string]chi.Router

@@ -15,6 +15,10 @@ func New() Routes {
 	return Routes{}
 }
 
+func (hr Routes) Match(rctx *chi.Context, method, path string) bool {
+	return true
+}
+
 func (hr Routes) Map(host string, h chi.Router) {
 	hr[strings.ToLower(host)] = h
 }

@@ -18,14 +18,14 @@ func main() {
   hr := hostrouter.New()
 
   // Requests to api.domain.com
-  hr.Map("", apiRouter) // default
-  hr.Map("api.domain.com", apiRouter)
+  hr.Map("", apiRouter()) // default
+  hr.Map("api.domain.com", apiRouter())
 
   // Requests to doma.in
-  hr.Map("doma.in", shortUrlRouter)
+  hr.Map("doma.in", shortUrlRouter())
 
   // Requests to host that isn't defined above
-  hr.Map("*", everythingElseRouter)
+  hr.Map("*", everythingElseRouter())
 
   // Mount the host router
   r.Mount("/", hr)

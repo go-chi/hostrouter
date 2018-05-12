@@ -63,7 +63,7 @@ func requestHost(r *http.Request) (host string) {
 	}
 
 	// if all else fails fall back to request host
-	host = r.Host
+	host = r.URL.Hostname()
 	return
 }
 

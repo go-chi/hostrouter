@@ -64,6 +64,12 @@ func requestHost(r *http.Request) (host string) {
 
 	// if all else fails fall back to request host
 	host = r.Host
+
+	// Filter out port part from host
+	if idx := strings.LastIndexByte(host, ':'); idx > 0 {
+		host = host[:idx]
+	}
+
 	return
 }
 

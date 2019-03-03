@@ -24,6 +24,9 @@ func main() {
   // Requests to doma.in
   hr.Map("doma.in", shortUrlRouter())
 
+  // Requests to *.doma.in
+  hr.Map("*.doma.in", shortUrlRouter())
+
   // Requests to host that isn't defined above
   hr.Map("*", everythingElseRouter())
 
